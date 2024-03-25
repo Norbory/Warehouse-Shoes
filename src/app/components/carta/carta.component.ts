@@ -1,0 +1,18 @@
+import { Component, Input } from '@angular/core';
+import { NgIf } from '@angular/common';
+
+@Component({
+  selector: 'app-carta',
+  standalone: true,
+  imports: [NgIf],
+  templateUrl: './carta.component.html',
+  styleUrl: './carta.component.css'
+})
+export class CartaComponent {
+  @Input() producto: string | undefined;
+  @Input() location: string | undefined;
+  @Input() stock: number | undefined;
+  @Input() price: string | undefined;
+  @Input() img: string | undefined;
+  @Input() url: string | undefined;
+}
