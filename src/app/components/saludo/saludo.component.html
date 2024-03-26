@@ -2,9 +2,37 @@
     <h1 class="text-4xl font-bold text-rose-600 text-center py-8">CATÁLOGO</h1>
     <div class="flex flex-1 lg:flex-row flex-col justify-around ">
         <div class="flex flex-1 flex-col lg:py-0 py-4">
-            <h3 class="text-xl font-semibold text-black text-start pb-2">CREATE PRODUCT</h3>
+            <h3 class="text-xl font-semibold text-black pb-2">CREATE PRODUCT</h3>
+            <form  class="grid md:grid-cols-2 grid-cols-1 max-w-2/5 flex-col px-10">
+                <div class="flex flex-col flex-1 input-group text-start self-center">
+                    <label for="product-name">Name:</label>
+                    <input id="product-name" type="text" class="border border-neutral-600 rounded-lg p-2 m-1" required placeholder="Product name">
+                </div>
+                <div class=" flex flex-col flex-1input-group text-start self-center">
+                    <label for="stock">Stock:</label>
+                    <input id="stock" type="number" class="border border-neutral-600 rounded-lg p-2 m-1" required placeholder="Stock">
+                </div>
+                <div class="flex flex-col flex-1 input-group text-start self-center">
+                    <label for="price">Price:</label>
+                    <input id="price" type="string" class="border border-neutral-600 rounded-lg p-2 m-1" required placeholder="Price">
+                </div>
+                <div class="flex flex-col flex-1 input-group text-start self-center">
+                    <label for="img">Image:</label>
+                    <input id="img" type="text" class="border border-neutral-600 rounded-lg p-2 m-1" required placeholder="Image URL">
+                </div>
+                <div class="flex flex-col flex-1 input-group text-start self-center">
+                    <label for="url">URL:</label>
+                    <input id="url" type="text" class="border border-neutral-600 rounded-lg p-2 m-1" required placeholder="Product link">
+                </div>
+                <div class="flex flex-col flex-1 input-group text-start self-center">
+                    <label for="location">Location:</label>
+                    <input id="location" type="text" class="border border-neutral-600 rounded-lg p-2 m-1" required placeholder="Location">
+                </div>
+                <button type="submit" class="self-center bg-rose-700 text-white  font-semibold py-2 px-4 rounded my-4 flex justify-center align-middle">
+                    STORE
+                </button>
+            </form>
             <div class="flex justify-center align-middle">
-                <button class="bg-rose-700 text-white  font-semibold py-2 px-4 rounded">STORE</button>
             </div>
         </div>
         <div class="flex flex-1 flex-col lg:py-0 py-4">
@@ -35,5 +63,4 @@
             [url]="productor.url"
         ></app-carta>
     </div>
-    
 </section>
