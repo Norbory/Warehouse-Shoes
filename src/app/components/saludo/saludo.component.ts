@@ -2,16 +2,18 @@ import { Component } from '@angular/core';
 import { CartaComponent } from "../carta/carta.component";
 import { TableComponent } from '../table/table.component';
 import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
+import { RouterModule } from '@angular/router';
 import * as data from '../../data/products.json';
 import { NgFor } from '@angular/common';
 import { Product } from '../../types/product';
+import { ProductoComponent } from '../producto/producto.component';
 
 @Component({
   selector: 'app-saludo',
   standalone: true,
   templateUrl: './saludo.component.html',
   styleUrl: './saludo.component.css',
-  imports: [CartaComponent, TableComponent, NgFor, ReactiveFormsModule],
+  imports: [CartaComponent, TableComponent, NgFor, ReactiveFormsModule, RouterModule, ProductoComponent],
 })
 export class SaludoComponent {
   products = (data as any).default;

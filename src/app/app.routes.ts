@@ -1,6 +1,6 @@
 import { Routes } from '@angular/router';
-import { CartaComponent } from './components/carta/carta.component';
+import { ProductoComponent } from './components/producto/producto.component';
 
 export const routes: Routes = [
-    { path: 'product/:id', component: CartaComponent },
+    { path: 'producto/:id', title:"Producto deportivo" ,component: ProductoComponent },
 ];
