@@ -1,32 +1,32 @@
 <section class="flex flex-1 flex-col p-6 w-full">
     <h1 class="text-4xl font-bold text-rose-600 text-center py-8">CATÁLOGO</h1>
     <div class="flex flex-1 lg:flex-row flex-col justify-around ">
-        <div class="flex flex-1 flex-col lg:py-0 py-4">
+        <div class="flex flex-1 flex-col lg:py-0 p-4 rounded-md shadow-sm mx-2">
             <h3 class="text-xl font-semibold text-black pb-2">CREATE PRODUCT</h3>
-            <form  class="grid md:grid-cols-2 grid-cols-1 max-w-2/5 flex-col px-10">
+            <form (ngSubmit)="agregarCarta()" [formGroup]="form" class="grid md:grid-cols-2 grid-cols-1 max-w-2/5 flex-col px-10">
                 <div class="flex flex-col flex-1 input-group text-start self-center">
                     <label for="product-name">Name:</label>
-                    <input id="product-name" type="text" class="border border-neutral-600 rounded-lg p-2 m-1" required placeholder="Product name">
+                    <input id="product-name" type="text" class="border border-neutral-600 rounded-lg p-2 m-1" placeholder="Product name" required formControlName="products">
                 </div>
-                <div class=" flex flex-col flex-1input-group text-start self-center">
+                <div class="flex flex-col flex-1input-group text-start self-center">
                     <label for="stock">Stock:</label>
-                    <input id="stock" type="number" class="border border-neutral-600 rounded-lg p-2 m-1" required placeholder="Stock">
+                    <input id="stock" type="number" class="border border-neutral-600 rounded-lg p-2 m-1" placeholder="Stock" required formControlName="stock">
                 </div>
                 <div class="flex flex-col flex-1 input-group text-start self-center">
                     <label for="price">Price:</label>
-                    <input id="price" type="string" class="border border-neutral-600 rounded-lg p-2 m-1" required placeholder="Price">
+                    <input id="price" type="string" class="border border-neutral-600 rounded-lg p-2 m-1" placeholder="Price" required formControlName="price">
                 </div>
                 <div class="flex flex-col flex-1 input-group text-start self-center">
                     <label for="img">Image:</label>
-                    <input id="img" type="text" class="border border-neutral-600 rounded-lg p-2 m-1" required placeholder="Image URL">
+                    <input id="img" type="text" class="border border-neutral-600 rounded-lg p-2 m-1" placeholder="Image URL" required formControlName="img">
                 </div>
                 <div class="flex flex-col flex-1 input-group text-start self-center">
                     <label for="url">URL:</label>
-                    <input id="url" type="text" class="border border-neutral-600 rounded-lg p-2 m-1" required placeholder="Product link">
+                    <input id="url" type="text" class="border border-neutral-600 rounded-lg p-2 m-1" placeholder="Product link" required formControlName="url">
                 </div>
                 <div class="flex flex-col flex-1 input-group text-start self-center">
                     <label for="location">Location:</label>
-                    <input id="location" type="text" class="border border-neutral-600 rounded-lg p-2 m-1" required placeholder="Location">
+                    <input id="location" type="text" class="border border-neutral-600 rounded-lg p-2 m-1" placeholder="Location" required formControlName="location">
                 </div>
                 <button type="submit" class="self-center bg-rose-700 text-white  font-semibold py-2 px-4 rounded my-4 flex justify-center align-middle">
                     STORE
@@ -35,21 +35,35 @@
             <div class="flex justify-center align-middle">
             </div>
         </div>
-        <div class="flex flex-1 flex-col lg:py-0 py-4">
+        <div class="flex flex-1 flex-col lg:py-0 p-4 rounded-md shadow-sm mx-2 ">
             <h3 class="text-xl  text-black text-start pb-2 font-semibold">LIST OF PRODUCTS</h3>
-            <table class="table-auto px-2">
+            <table class="table-auto px-2 ">
                 <thead>
                   <tr class="text-left">
                     <th>Product</th>
                     <th class="text-center">Stock</th>
                   </tr>
                 </thead>
-                <app-table
+                <tbody 
+                    class="text-wrap text-neutral-500 text-xs sm:text-md"
                     *ngFor="let productor of products"
-                    [producto]="productor.product"
-                    [stock]="productor.stock"
-                ></app-table>
-        </table>
+                >
+                    <tr>
+                      <td>{{productor.product}}</td>
+                      <td class="text-center">{{productor.stock}}</td>
+                      <td>
+                        <button class="btn btn-edit hover:text-blue-500">
+                          <i class="fas fa-edit"></i> <!-- Icono de edición de Font Awesome -->
+                        </button>
+                      </td>
+                      <td>
+                        <button class="btn btn-delete hover:text-red-500">
+                          <i class="fas fa-trash"></i> <!-- Icono de eliminación de Font Awesome -->
+                        </button>
+                      </td>
+                    </tr>
+                  </tbody>
+            </table>
         </div>
     </div>
     <div class="grid grid-flow-row xl:grid-cols-4 lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 py-12 self-center">
