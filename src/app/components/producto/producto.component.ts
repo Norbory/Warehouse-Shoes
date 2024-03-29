@@ -8,16 +8,22 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class ProductoComponent implements OnInit {
   producto!: string;
+  location!: string;
+  price!: number;
+  stock!: number;
+  url!: string;
+  img!: string;
+
   constructor(private route: ActivatedRoute) { }
 
   ngOnInit() {
     this.route.queryParams.subscribe(params => {
-      console.log(params['producto']);
-      console.log(params['location']);
-      console.log(params['price']); 
-      console.log(params['stock']);
-      console.log(params['url']);
-      console.log(params['img']);
+      this.producto = params['producto'];
+      this.location = params['location'];
+      this.price = params['price'];
+      this.stock = params['stock'];
+      this.url = params['url'];
+      this.img = params['img'];
     });
     console.log(this.route.snapshot.paramMap.get('id'));
   }
