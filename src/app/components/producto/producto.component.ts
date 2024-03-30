@@ -1,12 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { CarouselModule } from 'primeng/carousel';
 
 @Component({
   selector: 'app-producto',
   templateUrl: './producto.component.html',
   styleUrls: ['./producto.component.css'],
-  providers: [CarouselModule]
 })
 export class ProductoComponent implements OnInit {
   producto!: string;
