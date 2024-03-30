@@ -1,10 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { CarouselModule } from 'primeng/carousel';
 
 @Component({
   selector: 'app-producto',
   templateUrl: './producto.component.html',
-  styleUrls: ['./producto.component.css']
+  styleUrls: ['./producto.component.css'],
+  providers: [CarouselModule]
 })
 export class ProductoComponent implements OnInit {
   producto!: string;
@@ -13,6 +15,7 @@ export class ProductoComponent implements OnInit {
   stock!: number;
   url!: string;
   img!: string;
+  selectedButton: number = 999999;
 
   constructor(private route: ActivatedRoute) { }
 
@@ -25,6 +28,10 @@ export class ProductoComponent implements OnInit {
       this.url = params['url'];
       this.img = params['img'];
     });
-    console.log(this.route.snapshot.paramMap.get('id'));
   }
+
+  selectButton(index: number) {
+    this.selectedButton = index;
+  }
+
 }
