@@ -1,33 +1,34 @@
+<h1></h1>
 <section class="flex flex-1 flex-col p-6 w-full">
     <div class="flex flex-1 lg:flex-row flex-col justify-around ">
         <div class="flex flex-1 flex-col lg:py-0 p-4 rounded-md shadow-sm mx-2">
             <h3 class="text-xl font-semibold text-black pb-2">CREATE PRODUCT</h3>
-            <form (ngSubmit)="agregarCarta()" [formGroup]="form" class="grid md:grid-cols-2 grid-cols-1 max-w-2/5 flex-col px-10">
-                <div class="flex flex-col flex-1 input-group text-start self-center">
+            <form (ngSubmit)="agregarCarta()" [formGroup]="form" class="grid md:grid-cols-2 gap-4 grid-cols-1 justify-items-stretch flex-col">
+                <div class="flex flex-col flex-1 input-group">
                     <label for="product-name">Name:</label>
-                    <input id="product-name" type="text" class="border border-neutral-600 rounded-lg p-2 m-1" placeholder="Product name" required formControlName="products">
+                    <input id="product-name" type="text" class="border border-neutral-600 rounded-lg p-2" placeholder="Product name" required formControlName="products">
                 </div>
-                <div class="flex flex-col flex-1input-group text-start self-center">
+                <div class="flex flex-col flex-1input-group">
                     <label for="stock">Stock:</label>
-                    <input id="stock" type="number" class="border border-neutral-600 rounded-lg p-2 m-1" placeholder="Stock" required formControlName="stock">
+                    <input id="stock" type="number" class="border border-neutral-600 rounded-lg p-2" placeholder="Stock" required formControlName="stock">
                 </div>
-                <div class="flex flex-col flex-1 input-group text-start self-center">
+                <div class="flex flex-col flex-1 input-group">
                     <label for="price">Price:</label>
-                    <input id="price" type="string" class="border border-neutral-600 rounded-lg p-2 m-1" placeholder="Price" required formControlName="price">
+                    <input id="price" type="string" class="border border-neutral-600 rounded-lg p-2" placeholder="Price" required formControlName="price">
                 </div>
-                <div class="flex flex-col flex-1 input-group text-start self-center">
+                <div class="flex flex-col flex-1 input-group">
                     <label for="img">Image:</label>
-                    <input id="img" type="text" class="border border-neutral-600 rounded-lg p-2 m-1" placeholder="Image URL" required formControlName="img">
+                    <input id="img" type="text" class="border border-neutral-600 rounded-lg p-2" placeholder="Image URL" required formControlName="img">
                 </div>
-                <div class="flex flex-col flex-1 input-group text-start self-center">
+                <div class="flex flex-col flex-1 input-group">
                     <label for="url">URL:</label>
-                    <input id="url" type="text" class="border border-neutral-600 rounded-lg p-2 m-1" placeholder="Product link" required formControlName="url">
+                    <input id="url" type="text" class="border border-neutral-600 rounded-lg p-2" placeholder="Product link" required formControlName="url">
                 </div>
-                <div class="flex flex-col flex-1 input-group text-start self-center">
+                <div class="flex flex-col flex-1 input-group">
                     <label for="location">Location:</label>
-                    <input id="location" type="text" class="border border-neutral-600 rounded-lg p-2 m-1" placeholder="Location" required formControlName="location">
+                    <input id="location" type="text" class="border border-neutral-600 rounded-lg p-2" placeholder="Location" required formControlName="location">
                 </div>
-                <button type="submit" class="self-center bg-rose-700 text-white  font-semibold py-2 px-4 rounded my-4 flex justify-center align-middle">
+                <button type="submit" class="place-content-center    md:grid md:justify-self-center md:grid-cols-subgrid md:col-span-2 bg-rose-700 text-white font-semibold py-2 px-4 rounded my-4 flex">
                     STORE
                 </button>
             </form>
