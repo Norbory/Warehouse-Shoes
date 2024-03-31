@@ -1,11 +1,26 @@
-<div class="min-h-[630px] my-6 2xl:mx-6 mx-0 w-full max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 p-6 flex flex-col justify-around align-middle">
+<div class="min-h-[680px] my-6 2xl:mx-6 mx-0 w-full max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 p-6 flex flex-col justify-around align-middle">
     <a [routerLink] = "['/producto', id]" [queryParams]="{producto: producto, location: location, price: price, stock: stock, img: img, url: url}">
-        <img id="imagen" class="p-8 rounded-t-lg hover:scale-125 transition-all" src={{img}} alt="product image" />
+        <img id="imagen" class="p-8 rounded-xl hover:scale-125 transition-all" src={{img}} alt="product image" />
     </a>
     <div class="px-5 pb-5">
         <a >
             <h5 class="text-xl font-semibold tracking-tight text-gray-900 dark:text-white">{{producto}} - {{location}}</h5>
         </a>
+        <div class="bg-yellow-400 w-fit rounded-md my-2" *ngIf="(this.stock ?? 0) > 0 && (this.stock ?? 0) < 50 else second">
+            <p class="text-xs py-1 px-3 font-bold text-gray-700">Cerca de agotarse</p> 
+        </div>
+        <ng-template #second>
+            <ng-container *ngIf="(this.stock ?? 0) > 50 else outOfStock">
+                <div class="bg-green-400 w-fit rounded-md my-2">
+                    <p class="text-xs py-1 px-3 font-bold text-gray-700">Producto disponible</p> 
+                </div>
+            </ng-container>
+        </ng-template>
+        <ng-template #outOfStock>
+            <div class="bg-red-400 w-fit rounded-md my-2">
+                <p class="text-xs py-1 px-3 font-bold text-gray-700">Producto no disponible</p>
+            </div>
+        </ng-template>
         <div class="flex items-center mt-2.5 mb-5">
             <div class="flex items-center space-x-1 rtl:space-x-reverse">
                 <svg class="w-4 h-4 text-yellow-300" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 22 20">
@@ -28,17 +43,7 @@
         </div>
         <div class="flex items-center justify-between">
             <span class="text-3xl font-bold text-gray-900 dark:text-white">{{price}}</span>
-            <div *ngIf="(this.stock ?? 0) > 0 && (this.stock ?? 0) < 50 else second">
-                <p class="text-center text-xs px-4 font-bold text-yellow-600">Cerca de agotarse</p> 
-            </div>
-            <ng-template #second>
-                <ng-container *ngIf="(this.stock ?? 0) > 50 else outOfStock">
-                    <p class="text-center text-xs px-4 font-bold text-green-500">Producto disponible</p> 
-                </ng-container>
-            </ng-template>
-            <ng-template #outOfStock>
-                    <p class="text-center text-xs px-4 font-bold text-red-600">Producto no disponible</p> 
-            </ng-template>
+           
         </div>
     </div>
 </div>

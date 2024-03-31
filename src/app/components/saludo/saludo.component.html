@@ -1,47 +1,62 @@
-<h1></h1>
 <section class="flex flex-1 flex-col p-6 w-full">
     <div class="flex flex-1 lg:flex-row flex-col justify-around ">
         <div class="flex flex-1 flex-col lg:py-0 p-4 rounded-md shadow-sm mx-2">
-            <h3 class="text-xl font-semibold text-black pb-2">CREATE PRODUCT</h3>
-            <form (ngSubmit)="agregarCarta()" [formGroup]="form" class="grid md:grid-cols-2 gap-4 grid-cols-1 justify-items-stretch flex-col">
+            <h3 class="text-lg font-semibold text-black pb-2">CREATE PRODUCT</h3>
+            <form (ngSubmit)="agregarCarta()" [formGroup]="form" class="grid md:grid-cols-2 gap-4 grid-cols-1 justify-items-stretch flex-col text-sm text-black font-semibold">
                 <div class="flex flex-col flex-1 input-group">
                     <label for="product-name">Name:</label>
-                    <input id="product-name" type="text" class="border border-neutral-600 rounded-lg p-2" placeholder="Product name" required formControlName="products">
+                    <input id="product-name" type="text" class="border border-neutral-600 rounded-lg p-2 text-neutral-600 font-medium" placeholder="Product name" required formControlName="products">
                 </div>
-                <div class="flex flex-col flex-1input-group">
+                <div class="flex flex-col flex-1 input-group">
                     <label for="stock">Stock:</label>
-                    <input id="stock" type="number" class="border border-neutral-600 rounded-lg p-2" placeholder="Stock" required formControlName="stock">
+                    <input id="stock" type="number" class="border border-neutral-600 rounded-lg p-2 text-neutral-600 font-medium" placeholder="Stock" required formControlName="stock">
                 </div>
                 <div class="flex flex-col flex-1 input-group">
                     <label for="price">Price:</label>
-                    <input id="price" type="string" class="border border-neutral-600 rounded-lg p-2" placeholder="Price" required formControlName="price">
+                    <input id="price" type="string" class="border border-neutral-600 rounded-lg p-2 text-neutral-600 font-medium" placeholder="Price" required formControlName="price">
                 </div>
                 <div class="flex flex-col flex-1 input-group">
                     <label for="img">Image:</label>
-                    <input id="img" type="text" class="border border-neutral-600 rounded-lg p-2" placeholder="Image URL" required formControlName="img">
+                    <input id="img" type="text" class="border border-neutral-600 rounded-lg p-2 text-neutral-600 font-medium" placeholder="Image URL" required formControlName="img">
                 </div>
                 <div class="flex flex-col flex-1 input-group">
                     <label for="url">URL:</label>
-                    <input id="url" type="text" class="border border-neutral-600 rounded-lg p-2" placeholder="Product link" required formControlName="url">
+                    <input id="url" type="text" class="border border-neutral-600 rounded-lg p-2 text-neutral-600 font-medium" placeholder="Product link" required formControlName="url">
                 </div>
                 <div class="flex flex-col flex-1 input-group">
                     <label for="location">Location:</label>
-                    <input id="location" type="text" class="border border-neutral-600 rounded-lg p-2" placeholder="Location" required formControlName="location">
+                    <input id="location" type="text" class="border border-neutral-600 rounded-lg p-2 text-neutral-600 font-medium" placeholder="Location" required formControlName="location">
                 </div>
-                <button type="submit" class="place-content-center    md:grid md:justify-self-center md:grid-cols-subgrid md:col-span-2 bg-rose-700 text-white font-semibold py-2 px-4 rounded my-4 flex">
+                <button 
+                    type="submit" 
+                    class="place-content-center md:justify-self-center md:grid-cols-subgrid md:col-span-2 bg-rose-700 text-white font-semibold py-2 px-4 rounded my-4 flex"
+                    [disabled]="this.form.invalid"
+                    [class.disabled]="this.form.invalid"
+                >
                     STORE
                 </button>
             </form>
+
+            <div *ngIf="this.submitted" class="absolute rounded-lg bg-green-600 top-1.5 right-1.5 w-80 p-5">
+                <h5 class="text-white text-lg font-semibold text-wrap"><i class="fas fa-plus pr-2"></i>PRODUCTO AÑADIDO</h5>
+                <p class="text-white text-sm font-medium text-wrap">El producto fue agregado al catálogo de manera existosamente.</p>
+            </div>
+
+            <div *ngIf="this.eliminated" class="absolute rounded-lg bg-red-600 top-1.5 right-1.5 w-80 p-5">
+                <h5 class="text-white text-lg font-semibold text-wrap"><i class="fas fa-trash pr-2"></i>PRODUCTO ELIMINADO</h5>
+                <p class="text-white text-sm font-medium text-wrap">El producto fue eliminado del catálogo de manera existosamente.</p>
+            </div>
+
             <div class="flex justify-center align-middle">
             </div>
         </div>
         <div class="flex flex-1 flex-col lg:py-0 p-4 rounded-md shadow-sm mx-2 ">
-            <h3 class="text-xl  text-black text-start pb-2 font-semibold">LIST OF PRODUCTS</h3>
-            <table class="table-auto px-2 ">
+            <h3 class="text-lg text-black text-start pb-2 font-semibold">LIST OF PRODUCTS</h3>
+            <table class="table-auto px-2">
                 <thead>
-                  <tr class="text-left">
+                  <tr class="text-left text-sm">
                     <th>Product</th>
-                    <th class="text-center">Stock</th>
+                    <th>Stock</th>
                   </tr>
                 </thead>
                 <tbody 
@@ -52,15 +67,19 @@
                         <td class="cursor-pointer">
                             {{productor.product}}
                         </td>
-                      <td class="text-center">{{productor.stock}}</td>
+                      <td>{{productor.stock}}</td>
                       <td>
                         <button class="btn btn-edit hover:text-blue-500">
-                          <i class="fas fa-edit"></i> <!-- Icono de edición de Font Awesome -->
+                          <i class="fas fa-edit"></i>
                         </button>
                       </td>
                       <td>
                         <button class="btn btn-delete hover:text-red-500">
-                          <i class="fas fa-trash"></i> <!-- Icono de eliminación de Font Awesome -->
+                            <i 
+                                (click)="eliminarCarta(i)"
+                                class="fas fa-trash"
+                            >
+                            </i> 
                         </button>
                       </td>
                     </tr>
