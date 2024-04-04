@@ -9,7 +9,12 @@ import { FooterComponent } from './components/footer/footer.component';
     standalone: true,
     templateUrl: './app.component.html',
     styleUrl: './app.component.css',
-    imports: [RouterOutlet, SaludoComponent, NavbarComponent, FooterComponent]
+    imports: [
+      RouterOutlet, 
+      SaludoComponent, 
+      NavbarComponent, 
+      FooterComponent
+    ]
 })
 export class AppComponent {
   title = 'first_project';
