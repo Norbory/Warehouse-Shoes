@@ -46,7 +46,7 @@
                 <p class="text-white text-sm font-medium text-wrap">El producto fue agregado al catálogo de manera existosamente.</p>
             </div>
 
-            <div *ngIf="this.edited" class="absolute rounded-lg bg-orange-600 top-1.5 right-1.5 w-80 p-5">
+            <div *ngIf="this.edited" class="absolute rounded-lg bg-blue-600 top-1.5 right-1.5 w-80 p-5">
                 <h5 class="text-white text-lg font-semibold text-wrap"><i class="fas fa-plus pr-2"></i>PRODUCTO EDITADO</h5>
                 <p class="text-white text-sm font-medium text-wrap">El producto fue editado al catálogo de manera existosamente.</p>
             </div>
@@ -70,7 +70,7 @@
                 </thead>
                 <tbody 
                     class="text-wrap text-neutral-500 text-xs sm:text-md"
-                    *ngFor="let productor of listZapatillas"
+                    *ngFor="let productor of productos"
                 >
                     <tr>
                         <td class="cursor-pointer">
@@ -102,7 +102,7 @@
     </div>
     <div class="grid grid-flow-row xl:grid-cols-4 lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 py-12 self-center">
         <app-carta 
-            *ngFor="let productor of listZapatillas"
+            *ngFor="let productor of productos"
             [id]="productor.id"
             [producto]="productor.product"
             [location]="productor.location"

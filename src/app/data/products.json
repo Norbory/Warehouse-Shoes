@@ -1,4 +1,5 @@
 [{
+    "id": 0,
     "product": "LeBron NXXT Gen AMPD",
     "location": "Lima",
     "stock": 97,
@@ -6,6 +7,7 @@
     "img": "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/1cb08f4d-8322-4466-b9b3-2cbb21974e2a/lebron-nxxt-gen-ampd-basketball-shoes-CH9Kwr.png",
     "url": "https://www.nike.com/t/lebron-nxxt-gen-ampd-basketball-shoes-CH9Kwr/FJ1566-101"
   }, {
+    "id": 1,
     "product": "Giannis Freak 5",
     "location": "Bulongji",
     "stock": 53,
@@ -13,6 +15,7 @@
     "img": "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/bbffcc1d-711a-42fc-89e5-0b775b175876/giannis-freak-5-basketball-shoes-jZzrx4.png",
     "url": "https://www.nike.com/t/giannis-freak-5-asw-basketball-shoes-jZzrx4/DX4985-700"
   }, {
+    "id": 2,
     "product": "Nike G.T. Cut Academy",
     "location": "Seattle",
     "stock": 61,
@@ -20,6 +23,7 @@
     "img": "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/e04036ee-79ba-4015-9d32-9c43b9bde66d/gt-cut-academy-womens-basketball-shoes-z7qv5C.png",
     "url": "https://www.nike.com/t/gt-cut-academy-womens-basketball-shoes-z7qv5C/FZ2852-002"
   }, {
+    "id": 3,
     "product": "Sabrina 1 (Team)",
     "location": "Trujillo",
     "stock": 0,
@@ -27,6 +31,7 @@
     "img": "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/e11a7bb7-645b-4a3b-bd2a-a5f011a1f991/sabrina-1-team-basketball-shoes-bVkR71.png",
     "url": "https://www.nike.com/t/sabrina-1-team-basketball-shoes-bVkR71/FQ3391-700"
   }, {
+    "id": 4,
     "product": "Air Jordan XXXVIII Celebration",
     "location": "Moscow",
     "stock": 97,
@@ -34,6 +39,7 @@
     "img": "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco,u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/e6c222ba-ab86-4bf0-abf3-4c1bca32df89/air-jordan-xxxviii-celebration-basketball-shoes-7qLMW4.png",
     "url": "https://www.nike.com/t/air-jordan-xxxviii-aqua-basketball-shoes-7qLMW4/DZ3356-100"
   }, {
+    "id": 5,
     "product": "Tatum 1 Arena Fits",
     "location": "Santiago",
     "stock": 98,
@@ -41,6 +47,7 @@
     "img": "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco,u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/98711f3d-7313-4bbc-ac91-6814407afb6a/tatum-1-arena-fits-basketball-shoes-98vPwk.png",
     "url": "https://www.nike.com/t/tatum-1-arena-fits-basketball-shoes-98vPwk/DZ3320-200"
   }, {
+    "id": 6,
     "product": "Giannis Immortality 3 5 The Hard Way",
     "location": "Huanuco",
     "stock": 40,
@@ -48,6 +55,7 @@
     "img": "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/f1abf4d8-42a5-49ba-aab6-a6ab5e33886a/giannis-immortality-3-5-the-hard-way-basketball-shoes-H93p2P.png",
     "url": "https://www.nike.com/t/giannis-immortality-3-asw-basketball-shoes-H93p2P/DZ7533-300"
   }, {
+    "id": 7,
     "product": "Nike G.T. Cut 3",
     "location": "Madrid",
     "stock": 19,
