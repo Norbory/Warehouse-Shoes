@@ -2,7 +2,7 @@
     <div class="flex flex-1 lg:flex-row flex-col justify-around ">
         <div class="flex flex-1 flex-col lg:py-0 p-4 rounded-md shadow-sm mx-2">
             <h3 class="text-lg font-semibold text-black pb-2">CREATE PRODUCT</h3>
-            <form (ngSubmit)="enviarFormulario()" [formGroup]="form" class="grid md:grid-cols-2 gap-4 grid-cols-1 justify-items-stretch flex-col text-sm text-black font-semibold">
+            <form (ngSubmit)="agregarCarta()" [formGroup]="form" class="grid md:grid-cols-2 gap-4 grid-cols-1 justify-items-stretch flex-col text-sm text-black font-semibold">
                 <div class="input-group hidden">
                     <label for="id">ID:</label>
                     <input id="id" type="number" formControlName="id">
@@ -80,7 +80,7 @@
                       <td>
                         <button class="btn btn-edit hover:text-blue-500">
                           <i
-                            (click)="obtenerZapatilla(productor.id)"
+                            
                             class="fas fa-edit"
                           >
                         </i>

@@ -15,16 +15,16 @@ import { Product } from '../../types/product';
   styleUrl: './saludo.component.css',
   imports: [CartaComponent, TableComponent, NgFor, NgIf, ReactiveFormsModule, RouterModule],
 })
-export class SaludoComponent {
+export class SaludoComponent implements OnInit{
   // Configuracion para agregar Database
-  // implements OnInit
+  // 
   // private _zapatillaService: ZapatillaService
   constructor() { }
   
-  // ngOnInit() {
+  ngOnInit() {
     // Llamada a la funcion para obtener zapatillas
     // this.obtenerZapatillas();
-  // }
+  }
 
   listZapatillas: Product[] = [];
   submitted! : boolean;
@@ -33,7 +33,7 @@ export class SaludoComponent {
   productos = (data as any).default;
 
   form = new FormGroup({
-    id: new FormControl(0),
+    id: new FormControl(9000),
     products: new FormControl('', Validators.required),
     location: new FormControl('', Validators.required),
     stock: new FormControl(0, Validators.required),
@@ -146,16 +146,17 @@ export class SaludoComponent {
   //       console.log(error.error.message);
   //     }
   //   );
-  // } 
+  // }
 
-  enviarFormulario() {
-    const index = this.form.value.id ?? 0;
-    if (index === 0) {
-      this.agregarCarta();
-    } else {
-      this.editarCarta(index);
-    }
-  }
+  // Controla si se envia el formulario o se edita una carta
+  // enviarFormulario() {
+  //   const index = this.form.value.id ?? 0;
+  //   if (index === 9000) {
+  //     this.agregarCarta();
+  //   } else {
+  //     this.editarCarta(index);
+  //   }
+  // }
 
   agregarCarta() {
     const product: Product = {
@@ -181,38 +182,5 @@ export class SaludoComponent {
       this.eliminated = false;
     }, 3000);
     this.eliminated = true;
-  }
-
-  obtenerZapatilla(index: number) {
-    const product = this.productos[index];
-    this.form.setValue({
-      id: product.id,
-      products: product.product,
-      location: product.location,
-      stock: product.stock,
-      price: product.price,
-      img: product.img,
-      url: product.url,
-    });
-  }
-
-  editarCarta(index: number) {
-    console.log(index);
-    this.obtenerZapatilla(index);
-    const product: Product = {
-      id: index,
-      product: this.form.value.products ?? 'Producto',
-      location: this.form.value.location ?? 'Ubicación',
-      stock: this.form.value.stock ?? 0,
-      price: this.form.value.price ?? 'Precio',
-      img: this.form.value.img ?? 'Imagen',
-      url: this.form.value.url ?? 'URL',
-    };
-    this.productos[index] = product;
-    setTimeout(() => {
-      this.edited = false;
-    }, 3000);
-    this.edited = true;
-    this.form.reset();
   }
 }
